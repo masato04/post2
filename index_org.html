@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+  <head>
+    <!-- ▼charset -->
+    <meta charset="UTF-8">
+    <!-- ▼title -->
+    <title>ajaxzip3のサンプル画面</title>
+    <!-- ▼description -->
+    <meta name="description" content="郵便番号を入力すると住所を自動表示するajaxzip3のサンプル画面です。">
+    <!-- ▼keyword -->
+    <meta name="keywords" content="">
+    <!-- ▼Viewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- ▼favicon -->
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <!-- ▼CSS -->
+    <link rel="stylesheet" href="../common/css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ▼JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/ajaxzip3.js" charset="UTF-8"></script>
+  </head>
+  
+  <body>
+  
+  <!-- ▼Contents -->
+  <div id="wrap_contents">
+    <div id="contents">
+      <!-- ▼見出し -->
+      <h1>ajaxzip3のサンプル画面</h1>
+      <p>ajaxzip3のサンプル画面です。郵便番号を入力すると住所を自動表示するので、ユーザビリティの向上に繋がります。詳しい設置方法については<a href="http://www.webdesign-fan.com/ajaxzip3">超簡単！たった2行だけで郵便番号から住所自動表示する方法：ajaxzip3</a>をご参照ください。</p>
+      <!-- ▼サンプル画面 -->
+      <h2>サンプル画面</h2>
+      <!-- ▼フォーム -->
+      <form id="form_1" name="" post="">
+      <p class="mb30">郵便番号を一つの入力欄(7桁)か二つの入力欄(3桁+4桁)、住所を一つの入力欄か二つの入力欄(都道府県+以降の住所)、各4パターンをご紹介します。</p>
+      <label>郵便番号(7桁)</label>
+      <input type="text" name="zip11" class="form_text" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
+      <label>都道府県+以降の住所</label>
+      <input type="text" name="addr11" class="form_text">
+      <p class="mb30">郵便番号入力欄に<span class="span_yellow">name="zip11"</span>と<span class="span_yellow">onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');"</span>を、住所入力欄に<span class="span_yellow">name="addr11"</span>を記述。7桁の郵便番号を入力すると住所を自動表示します。※郵便番号にハイフンを入れても入れなくても表示されるのが非常に便利です。</p>
+      <label>郵便番号(7桁)</label>
+      <input type="text" name="zip01" class="form_text" onKeyUp="AjaxZip3.zip2addr(this,'','pref01','addr01');">
+      <label>都道府県</label>
+      <input type="text" name="pref01" class="form_text">
+      <label>以降の住所</label>
+      <input type="text" name="addr01" class="form_text">
+      <p class="mb30">郵便番号入力欄に<span class="span_yellow">name="zip01"</span>と<span class="span_yellow">onKeyUp="AjaxZip3.zip2addr(this,'','pref01','addr01');"</span>を、都道府県入力欄に<span class="span_yellow">name="pref01"</span>を、以降の住所入力欄に<span class="span_yellow">name="addr01"</span>を記述。7桁の郵便番号を入力すると、都道府県と以降の住所を分けて住所を自動表示します。</p>
+      
+      <label>郵便番号(3桁+4桁)</label>
+      <input type="text" name="zip21" class="form_text-small"> - <input type="text" name="zip22" class="form_text-small" onKeyUp="AjaxZip3.zip2addr('zip21','zip22','addr21','addr21');">
+      <label>都道府県+以降の住所</label>
+      <input type="text" name="addr21" class="form_text">
+      <p class="mb30">郵便番号入力欄左側に<span class="span_yellow">name="zip21"</span>を、右側に<span class="span_yellow">name="zip22"</span>と<span class="span_yellow">onKeyUp="AjaxZip3.zip2addr('zip21','zip22','addr21','addr21');"</span>を、住所入力欄に<span class="span_yellow">name="addr21"</span>を記述。3桁+4桁で郵便番号を入力すると、住所を自動表示します。</p>
+      <label>郵便番号</label>
+      <input type="text" name="zip31" class="form_text-small"> - <input type="text" name="zip32" class="form_text-small" onKeyUp="AjaxZip3.zip2addr('zip31','zip32','pref31','addr31','addr31');">
+      <label>都道府県</label>
+      <input type="text" name="pref31" class="form_text">
+      <label>以降の住所</label>
+      <input type="text" name="addr31" class="form_text">
+      <p class="mb30">郵便番号入力欄左側に<span class="span_yellow">name="zip31"</span>を、右側に<span class="span_yellow">name="zip32"</span>と<span class="span_yellow">onKeyUp="AjaxZip3.zip2addr('zip31','zip32','pref31','addr31','addr31');"</span>を、都道府県入力欄に<span class="span_yellow">name="pref31"</span>を、以降の住所入力欄に<span class="span_yellow">name="addr31"</span>を記述。3桁+4桁で郵便番号を入力すると、都道府県と以降の住所を分けて住所を自動表示します。</p>
+      </form>
+    </div>
+  </div>
+  <!-- ▲Contents -->
+
+  </body>
+</html>
